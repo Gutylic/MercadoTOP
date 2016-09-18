@@ -1,0 +1,32 @@
+﻿.col-xs-6.autos {
+    width: 150px;
+    padding-left: 1px;
+    padding-top: 15px;
+    padding-right:0px;
+}
+
+.col-xs-6.casas {
+     width: 30px; 
+    padding-left: -350px;
+    padding-top: 15px;
+
+}
+
+.col-xs-6.servicios {
+    width: 150px;
+    padding-left: 1px;
+    padding-top: 15px;
+}
+
+.col-xs-6.productos {
+    width: 30px;
+    padding-left: -400px;
+    padding-top: 15px;
+}
+
+.col-xs-4.listo {
+    height: 40px;
+    margin-top: 70px;
+    padding-left: 20px;
+
+}

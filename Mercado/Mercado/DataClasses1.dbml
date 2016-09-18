@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MercadoTP" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=GustavoPC;Initial Catalog=MercadoTP;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MercadoTPConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tablaUsuario" Member="tablaUsuario">
+    <Type Name="tablaUsuario">
+      <Column Name="id_Usuario" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="usuario" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="correoElectronico" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="celularMovil" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="contraseñaUsuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="activacionUsuario" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codigoSMS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tablaUsuario_tablaDatosUsuarios" Member="tablaDatosUsuarios" ThisKey="id_Usuario" OtherKey="id_Usuario" Type="tablaDatosUsuarios" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaAutosCategoria1" Member="tablaAutosCategoria1">
+    <Type Name="tablaAutosCategoria1">
+      <Column Name="id_Autos1" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="autosCategoria1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaAutosCategoria2" Member="tablaAutosCategoria2">
+    <Type Name="tablaAutosCategoria2">
+      <Column Name="id_Autos2" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="autosCategoria2" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaAutosCategoria3" Member="tablaAutosCategoria3">
+    <Type Name="tablaAutosCategoria3">
+      <Column Name="id_Autos3" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="autosCategoria3" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaAutosCategoria4" Member="tablaAutosCategoria4">
+    <Type Name="tablaAutosCategoria4">
+      <Column Name="id_Autos4" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="autosCategoria4" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaCasasCategoria1" Member="tablaCasasCategoria1">
+    <Type Name="tablaCasasCategoria1">
+      <Column Name="id_Casas1" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="casasCategoria1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaCasasCategoria2" Member="tablaCasasCategoria2">
+    <Type Name="tablaCasasCategoria2">
+      <Column Name="id_Casas2" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="casasCategoria2" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaDatosUsuarios" Member="tablaDatosUsuarios">
+    <Type Name="tablaDatosUsuarios">
+      <Column Name="id_Usuario" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DNI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Domicilio" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Localidad" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Pais" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tablaUsuario_tablaDatosUsuarios" Member="tablaUsuario" ThisKey="id_Usuario" OtherKey="id_Usuario" Type="tablaUsuario" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaProductosCategoria1" Member="tablaProductosCategoria1">
+    <Type Name="tablaProductosCategoria1">
+      <Column Name="id_Productos1" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="productosCategoria1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaProductosCategoria2" Member="tablaProductosCategoria2">
+    <Type Name="tablaProductosCategoria2">
+      <Column Name="id_Productos2" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="productosCategoria2" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaProductosCategoria3" Member="tablaProductosCategoria3">
+    <Type Name="tablaProductosCategoria3">
+      <Column Name="id_Productos3" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="productosCategoria3" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaProductosCategoria4" Member="tablaProductosCategoria4">
+    <Type Name="tablaProductosCategoria4">
+      <Column Name="id_Productos4" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="productosCategoria4" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaProductosCategoria5" Member="tablaProductosCategoria5">
+    <Type Name="tablaProductosCategoria5">
+      <Column Name="id_Productos5" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="productosCategoria5" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaProductosCategoria6" Member="tablaProductosCategoria6">
+    <Type Name="tablaProductosCategoria6">
+      <Column Name="id_Productos6" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="productosCategoria6" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaProductosCategoria7" Member="tablaProductosCategoria7">
+    <Type Name="tablaProductosCategoria7">
+      <Column Name="id_Productos7" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="productosCategoria7" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaProductosDescripcion" Member="tablaProductosDescripcion">
+    <Type Name="tablaProductosDescripcion">
+      <Column Name="id_Producto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ubicacionFoto1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionVideo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="id_Usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_UsuarioAdministrador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidadProducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vencimientoProducto" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="descripcionProducto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="estadoProducto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="tiempoGarantia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="activacionProducto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="precioProducto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaProductosUbicacion" Member="tablaProductosUbicacion">
+    <Type Name="tablaProductosUbicacion">
+      <Column Name="id_Producto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tipoProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="categoria1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="categoria2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="categoria3" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria4" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria5" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria6" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="tituloProducto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaServiciosCategoria1" Member="tablaServiciosCategoria1">
+    <Type Name="tablaServiciosCategoria1">
+      <Column Name="id_Servicios1" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="serviciosCategoria1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaServiciosCategoria2" Member="tablaServiciosCategoria2">
+    <Type Name="tablaServiciosCategoria2">
+      <Column Name="id_Servicios2" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="serviciosCategoria2" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaServiciosCategoria3" Member="tablaServiciosCategoria3">
+    <Type Name="tablaServiciosCategoria3">
+      <Column Name="id_Servicios3" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="serviciosCategoria3" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaServiciosCategoria4" Member="tablaServiciosCategoria4">
+    <Type Name="tablaServiciosCategoria4">
+      <Column Name="id_Servicios4" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="serviciosCategoria4" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablaServiciosCategoria5" Member="tablaServiciosCategoria5">
+    <Type Name="tablaServiciosCategoria5">
+      <Column Name="id_Servicios5" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="serviciosCategoria5" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vistaProductosCompletos" Member="vistaProductosCompletos">
+    <Type Name="vistaProductosCompletos">
+      <Column Name="activacionProducto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="tiempoGarantia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="estadoProducto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="descripcionProducto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="vencimientoProducto" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cantidadProducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_UsuarioAdministrador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_Usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ubicacionVideo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ubicacionFoto4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tituloProducto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="categoria6" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria5" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria4" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria3" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="categoria1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tipoProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_Producto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="precioProducto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.activarProducto" Method="activarProducto">
+    <Parameter Name="id_Producto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usuarioRelacionadoAdministrador" Method="usuarioRelacionadoAdministrador">
+    <Parameter Name="nickUsuario" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.activarUsuario" Method="activarUsuario">
+    <Parameter Name="nickUsuario" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="codigoSMS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.borrarAdministrador" Method="borrarAdministrador">
+    <Parameter Name="nickUsuario" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.borrarProducto" Method="borrarProducto">
+    <Parameter Name="id_Producto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaAutos1" Method="categoriaAutos1">
+    <ElementType Name="categoriaAutos1Result">
+      <Column Name="id_Autos1" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="autosCategoria1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaAutos2" Method="categoriaAutos2">
+    <Parameter Name="id_Autos2" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaAutos2Result">
+      <Column Name="id_Autos2" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="autosCategoria2" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaAutos2Cero" Method="categoriaAutos2Cero">
+    <Parameter Name="id_Autos2" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaAutos3" Method="categoriaAutos3">
+    <Parameter Name="id_Autos3" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaAutos3Result">
+      <Column Name="id_Autos3" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="autosCategoria3" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaAutos3Cero" Method="categoriaAutos3Cero">
+    <Parameter Name="id_Autos3" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaAutos4" Method="categoriaAutos4">
+    <Parameter Name="id_Autos4" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaAutos4Result">
+      <Column Name="id_Autos4" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="autosCategoria4" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaAutos4Cero" Method="categoriaAutos4Cero">
+    <Parameter Name="id_Autos4" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaCasas1" Method="categoriaCasas1">
+    <ElementType Name="categoriaCasas1Result">
+      <Column Name="id_Casas1" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="casasCategoria1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaCasas2" Method="categoriaCasas2">
+    <Parameter Name="id_Casas2" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaCasas2Result">
+      <Column Name="id_Casas2" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="casasCategoria2" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaCasas2Cero" Method="categoriaCasas2Cero">
+    <Parameter Name="id_Casas2" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaProductos1" Method="categoriaProductos1">
+    <ElementType Name="categoriaProductos1Result">
+      <Column Name="id_Productos1" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="productosCategoria1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaProductos2" Method="categoriaProductos2">
+    <Parameter Name="id_Productos2" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaProductos2Result">
+      <Column Name="id_Productos2" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="productosCategoria2" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaProductos2Cero" Method="categoriaProductos2Cero">
+    <Parameter Name="id_Productos2" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaProductos3" Method="categoriaProductos3">
+    <Parameter Name="id_Productos3" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaProductos3Result">
+      <Column Name="id_Productos3" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="productosCategoria3" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaProductos3Cero" Method="categoriaProductos3Cero">
+    <Parameter Name="id_Productos3" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaProductos4" Method="categoriaProductos4">
+    <Parameter Name="id_Productos4" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaProductos4Result">
+      <Column Name="id_Productos4" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="productosCategoria4" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaProductos4Cero" Method="categoriaProductos4Cero">
+    <Parameter Name="id_Productos4" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaProductos5" Method="categoriaProductos5">
+    <Parameter Name="id_Productos5" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaProductos5Result">
+      <Column Name="id_Productos5" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="productosCategoria5" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaProductos5Cero" Method="categoriaProductos5Cero">
+    <Parameter Name="id_Productos5" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaServicios1" Method="categoriaServicios1">
+    <ElementType Name="categoriaServicios1Result">
+      <Column Name="id_Servicios1" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="serviciosCategoria1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaServicios2" Method="categoriaServicios2">
+    <Parameter Name="id_Servicios2" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaServicios2Result">
+      <Column Name="id_Servicios2" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="serviciosCategoria2" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaServicios2Cero" Method="categoriaServicios2Cero">
+    <Parameter Name="id_Servicios2" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaServicios3" Method="categoriaServicios3">
+    <Parameter Name="id_Servicios3" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaServicios3Result">
+      <Column Name="id_Servicios3" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="serviciosCategoria3" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaServicios3Cero" Method="categoriaServicios3Cero">
+    <Parameter Name="id_Servicios3" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaServicios4" Method="categoriaServicios4">
+    <Parameter Name="id_Servicios4" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaServicios4Result">
+      <Column Name="id_Servicios4" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="serviciosCategoria4" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaServicios4Cero" Method="categoriaServicios4Cero">
+    <Parameter Name="id_Servicios4" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoriaServicios5" Method="categoriaServicios5">
+    <Parameter Name="id_Servicios5" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="categoriaServicios5Result">
+      <Column Name="id_Servicios5" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="serviciosCategoria5" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.categoriaServicios5Cero" Method="categoriaServicios5Cero">
+    <Parameter Name="id_Servicios5" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarAdministrador" Method="insertarAdministrador">
+    <Parameter Name="nickUsuario" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarProducto" Method="insertarProducto">
+    <Parameter Name="ubicacionFoto1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ubicacionFoto2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ubicacionFoto3" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ubicacionFoto4" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="tituloProducto" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ubicacionVideo" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="id_Usuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_UsuarioAdministrador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cantidadProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descripcionProducto" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="estadoProducto" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="tiempoGarantia" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tipoProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="categoria1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="categoria2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="categoria3" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="categoria4" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="categoria5" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="categoria6" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="precioProducto" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.loguearUsuario" Method="loguearUsuario">
+    <Parameter Name="nickUsuario" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="contrasenaUsuario" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="resultado" Type="System.String" DbType="NVarChar(30)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarProducto" Method="modificarProducto">
+    <Parameter Name="ubicacionFoto1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ubicacionFoto2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ubicacionFoto3" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ubicacionFoto4" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="tituloProducto" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ubicacionVideo" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="cantidadProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descripcionProducto" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="estadoProducto" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="tiempoGarantia" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tipoProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="categoria1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="categoria2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="categoria3" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="categoria4" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="categoria5" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="categoria6" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="id_Producto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.mostrarProductoElegido" Method="mostrarProductoElegido">
+    <Parameter Name="id_Producto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarProductoElegidoResult">
+      <Column Name="activacionProducto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="tiempoGarantia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="estadoProducto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="descripcionProducto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="vencimientoProducto" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cantidadProducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_UsuarioAdministrador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_Usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ubicacionVideo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ubicacionFoto4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tituloProducto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="categoria6" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria5" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria4" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria3" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="categoria1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tipoProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_Producto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="precioProducto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarTodosProductos" Method="mostrarTodosProductos">
+    <ElementType Name="mostrarTodosProductosResult">
+      <Column Name="activacionProducto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="tiempoGarantia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="estadoProducto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="descripcionProducto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="vencimientoProducto" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cantidadProducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_UsuarioAdministrador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_Usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ubicacionVideo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ubicacionFoto4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tituloProducto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="categoria6" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria5" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria4" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria3" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="categoria1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tipoProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_Producto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="precioProducto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.recuperarContrasena" Method="recuperarContrasena">
+    <Parameter Name="celularMovil" Type="System.String" DbType="NVarChar(17)" />
+    <Parameter Name="contrasenaUsuario" Type="System.String" DbType="NVarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrarUsuario" Method="registrarUsuario">
+    <Parameter Name="nickUsuario" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="correoElectronico" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="celularMovil" Type="System.String" DbType="NVarChar(17)" />
+    <Parameter Name="contrasenaUsuario" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ultimaFoto" Method="ultimaFoto">
+    <Parameter Name="resultado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.mostrarSoloProductosUsuario" Method="mostrarSoloProductosUsuario">
+    <Parameter Name="id_Usuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarSoloProductosUsuarioResult">
+      <Column Name="activacionProducto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="tiempoGarantia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="estadoProducto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="descripcionProducto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="vencimientoProducto" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cantidadProducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_UsuarioAdministrador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_Usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ubicacionVideo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ubicacionFoto4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ubicacionFoto1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tituloProducto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="categoria6" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria5" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria4" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria3" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="categoria2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="categoria1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tipoProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_Producto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="precioProducto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
